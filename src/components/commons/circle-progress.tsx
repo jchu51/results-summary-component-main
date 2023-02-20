@@ -11,11 +11,11 @@ export default function CircleProgress({
   maxNumber = 100,
 }: CircleProgressProps) {
   return (
-    <CircleProgressContainer>
+    <CircleProgressContainer data-testid="circleProgress">
       <CircleProgressInnerWrapper>
         <CircleProgressPercentage>{number}</CircleProgressPercentage>
         <CircleProgressMaxPercentage>
-          of {maxNumber}
+          {" "}of {maxNumber}
         </CircleProgressMaxPercentage>
       </CircleProgressInnerWrapper>
     </CircleProgressContainer>

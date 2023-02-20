@@ -16,14 +16,20 @@ const ScoreBar = ({
   maxScore = 100,
   color,
 }: ScoreBarProps) => (
-  <ScoreBarContainer color={color}>
+  <ScoreBarContainer data-testid="scoreBar" color={color}>
     <ScoreBarCategory>
       <Icon name={category} />
-      <ScoreBarCategoryText color={color}>{category}</ScoreBarCategoryText>
+      <ScoreBarCategoryText data-testid="scoreBarCategoryText" color={color}>
+        {category}
+      </ScoreBarCategoryText>
     </ScoreBarCategory>
     <ScoreBarScore>
-      <ScoreBarScoreNumber opacity={1}>{score} </ScoreBarScoreNumber>
-      <ScoreBarScoreNumber opacity={0.5}>/ {maxScore}</ScoreBarScoreNumber>
+      <ScoreBarScoreNumber data-testid="ScoreBarScoreNumber" opacity={1}>
+        {score}
+      </ScoreBarScoreNumber>
+      <ScoreBarScoreNumber data-testid="ScoreBarScoreMaxNumber" opacity={0.5}>
+        / {maxScore}
+      </ScoreBarScoreNumber>
     </ScoreBarScore>
   </ScoreBarContainer>
 );
@@ -87,7 +93,7 @@ const ScoreBarScore = styled.div`
   flex-basis: 30%;
 `;
 const ScoreBarScoreNumber = styled.span<{ opacity?: number }>`
-  opacity: ${(props) => props.opacity || "1"};
+  opacity: ${(props) => props.opacity};
   padding: 0 4px;
 `;
 

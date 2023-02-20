@@ -1,21 +1,26 @@
 import React from "react";
 import styled from "styled-components";
-import CircleProgress from "../circle-progress";
+import CircleProgress from "../commons/circle-progress";
 
 export interface SummaryResultProps {
   score: number;
   maxScore?: number;
 }
 
-export default function SummaryResult({ score, maxScore }: SummaryResultProps) {
+export default function SummaryResult({
+  score,
+  maxScore = 100,
+}: SummaryResultProps) {
   return (
-    <SummaryResultSection>
+    <SummaryResultSection data-testid="summaryResult">
       <SummaryResultSectionWrapper>
-        <SummaryResultTitle>Your Result</SummaryResultTitle>
+        <SummaryResultTitle data-testid="summaryResultTitle">
+          Your Result
+        </SummaryResultTitle>
         <CircleProgress number={score} maxNumber={maxScore} />
         <SummaryResultContentSection>
           <SummaryResultContentTitle>Great</SummaryResultContentTitle>
-          <SummaryResultContentBody>
+          <SummaryResultContentBody data-testid="summaryResultContentBody">
             Your Result {score} of {maxScore} Great You scored higher than 65%
             of the people who have taken these tests.
           </SummaryResultContentBody>

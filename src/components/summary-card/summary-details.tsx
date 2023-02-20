@@ -1,8 +1,8 @@
 import React, { MouseEvent } from "react";
 import styled from "styled-components";
 import { CategoryDetails } from "../../context/global-store";
-import ScoreBar from "../score-bar";
-import Button from "../button";
+import ScoreBar from "../commons/score-bar";
+import Button from "../commons/button";
 
 export interface SummaryDetailsProps {
   categories: CategoryDetails[];
@@ -10,13 +10,16 @@ export interface SummaryDetailsProps {
 
 export default function SummaryDetails({ categories }: SummaryDetailsProps) {
   return (
-    <SummaryDetailsSection>
+    <SummaryDetailsSection data-testid="summaryDetails">
       <SummaryDetailsSectionWrapper>
         <SummaryDetailsTitle>Summary</SummaryDetailsTitle>
         {categories.map((item, i) => (
           <ScoreBar key={i} {...item} />
         ))}
-        <SummaryContinueButton onClick={handleClickContinue}>
+        <SummaryContinueButton
+          data-testid="summaryContinueButton"
+          onClick={handleClickContinue}
+        >
           Continue
         </SummaryContinueButton>
       </SummaryDetailsSectionWrapper>

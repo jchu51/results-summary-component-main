@@ -1,9 +1,14 @@
 import React, { ButtonHTMLAttributes } from "react";
 import styled from "styled-components";
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {}
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {}
+
 const Button = ({ children, ...props }: ButtonProps) => {
-  return <StyledButton {...props}>{children}</StyledButton>;
+  return (
+    <StyledButton data-testid="button" {...props}>
+      {children}
+    </StyledButton>
+  );
 };
 
 const StyledButton = styled.button`

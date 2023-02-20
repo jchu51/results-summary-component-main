@@ -15,7 +15,7 @@ export default function SummaryCard() {
   }, [summaryResult]);
 
   return (
-    <SummaryCardContainer>
+    <SummaryCardContainer data-testid="summaryCard">
       <SummaryResult score={calcScore()} />
       <SummaryDetails categories={summaryResult} />
     </SummaryCardContainer>

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { icons } from "../utils/icons";
+import { icons } from "../../utils/icons";
 
 export interface IconProps {
   name: string;
@@ -15,7 +15,7 @@ const Icon = ({ name }: IconProps) => {
   }
 
   return (
-    <SVGIconContainer>
+    <SVGIconContainer data-testid="icon">
       <SVGIcon />
     </SVGIconContainer>
   );
